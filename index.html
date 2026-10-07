@@ -37,7 +37,7 @@
 <main>
 
 <h1>Datenschutzerklärung</h1>
-<p class="stand">Für die iOS-App <strong>ViewCom</strong> · Stand: 21. Juli 2026</p>
+<p class="stand">Für die App <strong>ViewCom</strong> (iOS und Android) · Stand: 7. Oktober 2026</p>
 
 <h2>1. Verantwortlicher</h2>
 <p>Verantwortlich für die Datenverarbeitung in dieser App im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
@@ -55,8 +55,8 @@
   <a href="https://mein.online-impressum.de/alijoscha-alisan-aysanoglu-hollschwandner/">hier abrufbar</a>.</p>
 
 <h2>2. Was ViewCom macht</h2>
-<p>ViewCom hilft dabei, kleine Streamer auf der Plattform Twitch zu entdecken, die dort wegen der Sortierung nach Zuschauerzahl kaum sichtbar sind. Streams werden ausschließlich in der offiziellen Twitch-App oder im Twitch-Player geöffnet. ViewCom überträgt, speichert oder ersetzt keine Streaminhalte.</p>
-<p>Die App zeigt keine Werbung, nutzt kein Tracking zu Werbezwecken und verwendet keine geräteübergreifenden Werbekennungen (IDFA).</p>
+<p>ViewCom hilft dabei, kleine Streamer auf der Plattform Twitch zu entdecken, die dort wegen der Sortierung nach Zuschauerzahl kaum sichtbar sind. Die App zeigt eine kurze Vorschau über den offiziellen Twitch-Player und öffnet Streams ansonsten in der Twitch-App oder auf twitch.tv. ViewCom überträgt, speichert oder ersetzt keine Streaminhalte.</p>
+<p>ViewCom ist kostenlos und finanziert sich über Werbung (siehe Abschnitt 7).</p>
 
 <h2>3. Anmeldung über Twitch</h2>
 <p>Die Nutzung von ViewCom setzt eine Anmeldung mit einem bestehenden Twitch-Konto voraus. Die Anmeldung erfolgt über das offizielle OAuth-Verfahren von Twitch (Device Code Flow). Ein Passwort wird dabei niemals an ViewCom übermittelt oder von ViewCom gespeichert.</p>
@@ -66,22 +66,23 @@
   <li>Ihren Anmeldenamen und Anzeigenamen</li>
   <li>die URL Ihres Twitch-Profilbilds</li>
 </ul>
-<p>Die von Twitch ausgestellten Zugriffstoken werden ausschließlich lokal auf Ihrem Gerät in der iOS-Schlüsselbundverwaltung (Keychain) gespeichert und nicht an uns übertragen.</p>
-<p>Bei jeder Abfrage von Streaming-Daten wird eine Verbindung zu Servern von Twitch hergestellt. Dabei verarbeitet Twitch technisch notwendige Verbindungsdaten wie Ihre IP-Adresse. Anbieter ist die Twitch Interactive, Inc., 350 Bush Street, 2nd Floor, San Francisco, CA 94104, USA. Auf diese Verarbeitung haben wir keinen Einfluss; es gilt die
+<p>Ihre E-Mail-Adresse wird von ViewCom nicht gespeichert.</p>
+<p>Die von Twitch ausgestellten Zugriffstoken werden ausschließlich lokal auf Ihrem Gerät gespeichert, unter iOS in der Schlüsselbundverwaltung (Keychain), unter Android in einem verschlüsselten App-Speicher. Zur Anmeldung bei unserer Datenbank (Abschnitt 4) wird das Token einmalig an eine Server-Funktion übergeben, die es bei Twitch prüft; dort wird es nicht gespeichert. Beim Abmelden und beim Löschen des Kontos wird das Token bei Twitch widerrufen und vom Gerät entfernt.</p>
+<p>Für Streaming-Daten (Live-Status, Zuschauerzahlen, Suche), Profilbilder und die Vorschau verbindet sich die App direkt mit Servern von Twitch. Dabei verarbeitet Twitch technisch notwendige Verbindungsdaten wie Ihre IP-Adresse; der eingebettete Twitch-Player kann zudem Cookies oder ähnliche Technologien von Twitch verwenden. Anbieter ist die Twitch Interactive, Inc., 350 Bush Street, 2nd Floor, San Francisco, CA 94104, USA. Auf diese Verarbeitung haben wir keinen Einfluss; es gilt die
   <a href="https://www.twitch.tv/p/legal/privacy-notice/">Datenschutzerklärung von Twitch</a>.</p>
 <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Nutzungsverhältnisses), da die App ohne Twitch-Anbindung ihren Zweck nicht erfüllen kann.</p>
 
 <h2>4. Firebase (Google)</h2>
-<p>Zur Speicherung Ihrer Daten nutzen wir <strong>Firebase Firestore</strong> und <strong>Firebase Authentication</strong> der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+<p>Zur Speicherung Ihrer Daten nutzen wir <strong>Firebase Firestore</strong>, <strong>Firebase Authentication</strong> und <strong>Cloud Functions for Firebase</strong> der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
 
-<h3>Anonyme Anmeldung</h3>
-<p>Damit Ihre Daten Ihrem Gerät zugeordnet und vor dem Zugriff Dritter geschützt werden können, erzeugt die App beim ersten Speichern eine <em>anonyme</em> Firebase-Kennung (UID). Diese Kennung enthält keine personenbezogenen Angaben wie Name oder E-Mail-Adresse. Sie dient ausschließlich der technischen Zugriffskontrolle.</p>
+<h3>Anmeldung bei der Datenbank</h3>
+<p>Damit Ihre Daten Ihrem Konto zugeordnet und vor dem Zugriff Dritter geschützt sind, meldet die App Sie mit Ihrer Twitch-Benutzer-ID bei Firebase an. Dafür prüft eine Server-Funktion (Region europe-west1) Ihr Twitch-Token und stellt eine Anmeldekennung aus. So sind Ihre Daten auf allen Geräten und auf iOS wie Android dieselben.</p>
 
 <h3>Übermittlung in Drittländer</h3>
 <p>Eine Verarbeitung auf Servern der Google LLC in den Vereinigten Staaten kann nicht ausgeschlossen werden. Google LLC ist unter dem EU-US Data Privacy Framework zertifiziert; ergänzend bestehen Standardvertragsklauseln der Europäischen Kommission. Trotz dieser Maßnahmen besteht bei einer Übermittlung in die USA das Risiko, dass staatliche Stellen auf Daten zugreifen, ohne dass ein Rechtsbehelf in gleichem Umfang wie innerhalb der EU zur Verfügung steht.</p>
 <p>Weitere Informationen finden Sie in der
   <a href="https://firebase.google.com/support/privacy">Datenschutzinformation von Firebase</a>.</p>
-<p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO; hinsichtlich der Drittlandsübermittlung Art. 46 DSGVO.</p>
+<p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO; hinsichtlich der Drittlandsübermittlung Art. 45 und 46 DSGVO.</p>
 
 <h2>5. Welche Daten wir speichern</h2>
 <table>
@@ -91,46 +92,75 @@
     <td>Zuordnung Ihres Kontos und Anzeige in der App</td>
   </tr>
   <tr>
-    <td>Favorisierte Streamer (Twitch-IDs)</td>
+    <td>Favorisierte Streamer (Twitch-ID, Name)</td>
     <td>Anzeige Ihrer Favoritenliste und deren Live-Status</td>
   </tr>
   <tr>
-    <td>Erfahrungspunkte, Stufe, Münzen, Missionsfortschritt</td>
+    <td>Ausgeblendete Creator (Twitch-ID, Name)</td>
+    <td>Diese Creator werden Ihnen nicht mehr angezeigt</td>
+  </tr>
+  <tr>
+    <td>Erfahrungspunkte, Stufe, Münzen, gekaufte Designs und Profilrahmen, Missionsfortschritt</td>
     <td>Fortschritts- und Belohnungsfunktionen der App</td>
   </tr>
   <tr>
-    <td>Zählerstände zu entdeckten, favorisierten und auf Twitch geöffneten Kanälen</td>
-    <td>Statistiken im eigenen Profil; Verhinderung mehrfacher Punktevergabe</td>
+    <td>Zählerstände und Vermerke zu entdeckten, favorisierten und auf Twitch geöffneten Kanälen; Zeitpunkt der letzten Vorschau je Kanal</td>
+    <td>Statistiken im eigenen Profil; Verhinderung mehrfacher Punktevergabe; Begrenzung der Vorschau</td>
   </tr>
 </table>
+<p>Einstellungen wie Erscheinungsbild, Sprache oder ob Sie die Einführung bereits gesehen haben, speichert die App nur lokal auf Ihrem Gerät.</p>
 
 <h3>Zusätzlich bei Registrierung als Creator</h3>
 <p>Die Registrierung als Creator ist freiwillig. Nur wenn Sie sie aktiv vornehmen, verarbeiten wir zusätzlich:</p>
 <ul>
   <li>eine von Ihnen verfasste Profilbeschreibung (Bio)</li>
   <li>von Ihnen hinterlegte Links zu sozialen Netzwerken</li>
-  <li>die gewählte Bannerfarbe sowie Ihre Statusstufe (FOUNDER, EARLY, STANDARD)</li>
-  <li>Zählerstände zu Profilaufrufen, Twitch-Klicks und Favorisierungen</li>
+  <li>die gewählte Bannerfarbe, Ihre Statusstufe (FOUNDER, EARLY, STANDARD) und Ihre Stufe in der App</li>
+  <li>Zählerstände zu Profilaufrufen, Twitch-Klicks und Favorisierungen sowie den Fortschritt Ihrer Creator-Ziele</li>
 </ul>
 <div class="box">
-  <p><strong>Bitte beachten Sie:</strong> Ihr Creator-Profil ist innerhalb der App für andere Nutzerinnen und Nutzer sichtbar. Das gilt für Anzeigename, Profilbild, Bio und die von Ihnen hinterlegten Links. Ob Ihre Statistiken öffentlich angezeigt werden, entscheiden Sie selbst über einen Schalter in den Profileinstellungen; standardmäßig sind sie nicht sichtbar.</p>
+  <p><strong>Bitte beachten Sie:</strong> Ihr Creator-Profil ist innerhalb der App für andere Nutzerinnen und Nutzer sichtbar. Das gilt für Anzeigename, Profilbild, Bio, Stufe und die von Ihnen hinterlegten Links. Ob Ihre Statistiken öffentlich angezeigt werden, entscheiden Sie selbst über einen Schalter in den Profileinstellungen; standardmäßig sind sie nicht sichtbar.</p>
   <p>Veröffentlichen Sie in der Bio und in den Links keine Angaben, die Sie nicht öffentlich preisgeben möchten.</p>
 </div>
 <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch die freiwillige Registrierung). Sie können diese Einwilligung jederzeit widerrufen, indem Sie die Registrierung in der App aufheben oder Ihr Konto löschen.</p>
 
-<h2>6. Speicherdauer</h2>
-<p>Wir speichern Ihre Daten so lange, wie Ihr Konto besteht. Löschen Sie Ihr Konto, werden die zugehörigen Daten unverzüglich und vollständig entfernt. Eine gesetzliche Aufbewahrungspflicht besteht für diese Daten nicht.</p>
-
-<h2>7. Konto löschen</h2>
-<p>Sie können Ihr Konto jederzeit direkt in der App dauerhaft löschen:</p>
+<h2>6. Melden von Creator-Profilen</h2>
+<p>Sie können ein Creator-Profil, dessen Inhalte Sie für unangemessen halten, in der App melden und den Creator für sich ausblenden. Bei einer Meldung speichern wir:</p>
 <ul>
-  <li>Ohne Creator-Registrierung: im Tab <em>Profil</em> über den Eintrag <em>Konto löschen</em>.</li>
-  <li>Mit Creator-Registrierung: im Tab <em>Profil</em> über das Menü oben links, Eintrag <em>Konto löschen</em>.</li>
+  <li>Ihre Twitch-Benutzer-ID als meldende Person</li>
+  <li>die Twitch-Benutzer-ID des gemeldeten Creators</li>
+  <li>den gewählten Grund, die Plattform (iOS oder Android) und den Zeitpunkt</li>
 </ul>
-<p>Dabei werden Ihr Nutzerprofil, Ihr Fortschritt, Ihre Favoriten, Ihr Creator-Profil sowie die anonyme Firebase-Kennung endgültig gelöscht. Der Vorgang lässt sich nicht rückgängig machen.</p>
-<p>Alternativ können Sie die Löschung per E-Mail an <a href="mailto:alisan@sandiel.studio">alisan@sandiel.studio</a> verlangen.</p>
+<p>Die Meldung sehen nur Sie und wir. Wir prüfen sie und entfernen bei Verstößen gegen die
+  <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a> das betreffende Creator-Profil aus der App. Meldungen löschen wir nach Abschluss der Prüfung, spätestens nach 12 Monaten, sowie sofort, wenn Sie Ihr Konto löschen.</p>
+<p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt darin, rechtswidrige oder unangemessene Inhalte in der App zu verhindern und die Nutzerinnen und Nutzer zu schützen.</p>
 
-<h2>8. Ihre Rechte</h2>
+<h2>7. Werbung (Google AdMob)</h2>
+<p>In den Listen der App zeigen wir Werbebanner über den Dienst <strong>Google AdMob</strong> der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei verarbeitet Google nach eigenen Angaben insbesondere:</p>
+<ul>
+  <li>Ihre IP-Adresse, auch zur Schätzung des ungefähren Standorts</li>
+  <li>Werbekennungen Ihres Geräts (unter iOS die IDFA, unter Android die Werbe-ID) sowie app-bezogene Kennungen</li>
+  <li>Interaktionen mit der App und den Anzeigen, etwa App-Starts, Klicks und angesehene Anzeigen</li>
+  <li>Diagnose- und Leistungsdaten wie Absturzberichte, Ladezeiten und Energieverbrauch</li>
+</ul>
+<h3>Ihre Einwilligung</h3>
+<p>Beim ersten Öffnen der Community fragt die App über die Einwilligungsverwaltung von Google (User Messaging Platform), ob Google Daten für personalisierte Werbung und zur Messung verwenden darf. Unter iOS fragt zusätzlich das System, ob die App Sie über Apps und Websites anderer Unternehmen hinweg verfolgen darf (App Tracking Transparency); nur wenn Sie zustimmen, wird die IDFA verwendet.</p>
+<p>Ohne Einwilligung zeigt Google nicht personalisierte oder eingeschränkte Anzeigen. Ihre Entscheidung können Sie jederzeit in der App unter <em>Einstellungen → Datenschutz-Einstellungen (Werbung)</em> ändern; unter iOS zusätzlich in den Systemeinstellungen unter <em>Datenschutz &amp; Sicherheit → Tracking</em>, unter Android in den Systemeinstellungen zur Werbe-ID.</p>
+<p>Eine Übermittlung in die USA an die Google LLC ist möglich; es gelten die Ausführungen in Abschnitt 4. Weitere Informationen finden Sie in der
+  <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a> und unter
+  <a href="https://policies.google.com/technologies/ads">Wie Google Daten für Werbung verwendet</a>.</p>
+<p><strong>Rechtsgrundlage:</strong> Für personalisierte Werbung und den Zugriff auf Werbekennungen Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, die Sie jederzeit mit Wirkung für die Zukunft widerrufen können. Für nicht personalisierte Werbung Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt in der Finanzierung des kostenlosen Angebots.</p>
+
+<h2>8. Speicherdauer</h2>
+<p>Wir speichern Ihre Daten so lange, wie Ihr Konto besteht. Löschen Sie Ihr Konto, werden die zugehörigen Daten unverzüglich und vollständig entfernt. Für Meldungen gilt die Frist aus Abschnitt 6. Eine gesetzliche Aufbewahrungspflicht besteht für diese Daten nicht.</p>
+
+<h2>9. Konto löschen</h2>
+<p>Sie können Ihr Konto jederzeit direkt in der App dauerhaft löschen, unter iOS und Android gleich: <em>Einstellungen → Konto → Konto löschen</em>.</p>
+<p>Dabei werden Ihr Nutzerprofil, Ihr Fortschritt, Ihre Shop-Käufe, Ihre Favoriten, Ihre ausgeblendeten Creator, Ihre Meldungen, Ihr Creator-Profil sowie Ihre Firebase-Anmeldung endgültig gelöscht und der Twitch-Zugriff widerrufen. Ihr Twitch-Konto selbst bleibt bestehen. Der Vorgang lässt sich nicht rückgängig machen.</p>
+<p>Alternativ können Sie die Löschung per E-Mail an <a href="mailto:alisan@sandiel.studio">alisan@sandiel.studio</a> verlangen. Eine Anleitung finden Sie auch auf der Seite
+  <a href="https://alisansandielstudio.github.io/viewcom-konto-loeschen/">Konto und Daten löschen</a>.</p>
+
+<h2>10. Ihre Rechte</h2>
 <p>Ihnen stehen gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten zu:</p>
 <ul>
   <li>Auskunft (Art. 15 DSGVO)</li>
@@ -138,22 +168,27 @@
   <li>Löschung (Art. 17 DSGVO)</li>
   <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
   <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-  <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+  <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO), insbesondere gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO</li>
   <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
 </ul>
 <p>Zur Ausübung genügt eine formlose Nachricht an <a href="mailto:alisan@sandiel.studio">alisan@sandiel.studio</a>.</p>
 <p>Unabhängig davon steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu, insbesondere bei der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, Kavalleriestraße 2–4, 40213 Düsseldorf.</p>
 
-<h2>9. Datensicherheit</h2>
-<p>Die Übertragung zwischen App, Twitch und Firebase erfolgt ausschließlich verschlüsselt über HTTPS. Der Zugriff auf gespeicherte Daten ist durch serverseitige Sicherheitsregeln beschränkt: Persönliche Daten wie Favoriten und Fortschritt sind ausschließlich dem jeweils zugeordneten Konto zugänglich, und ein Creator-Profil kann nur von der zugehörigen Person bearbeitet oder gelöscht werden.</p>
+<h2>11. Datensicherheit</h2>
+<p>Die Übertragung zwischen App, Twitch, Firebase und Google AdMob erfolgt ausschließlich verschlüsselt über HTTPS. Der Zugriff auf gespeicherte Daten ist durch serverseitige Sicherheitsregeln beschränkt: Persönliche Daten wie Favoriten, ausgeblendete Creator, Meldungen und Fortschritt sind ausschließlich dem jeweils zugeordneten Konto zugänglich, und ein Creator-Profil kann nur von der zugehörigen Person bearbeitet oder gelöscht werden.</p>
 
-<h2>10. Mindestalter</h2>
+<h2>12. Mindestalter</h2>
 <p>ViewCom richtet sich nicht an Kinder. Da eine Nutzung ein Twitch-Konto voraussetzt, gelten zusätzlich die Altersanforderungen von Twitch. Personen unter 16 Jahren dürfen die App nur mit Zustimmung der sorgeberechtigten Person nutzen.</p>
 
-<h2>11. Änderungen dieser Erklärung</h2>
+<h2>13. Änderungen dieser Erklärung</h2>
 <p>Wir passen diese Datenschutzerklärung an, wenn Änderungen an der App dies erforderlich machen. Die jeweils aktuelle Fassung ist unter dieser Adresse abrufbar.</p>
 
 <footer>
+  <p>
+    <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a> ·
+    <a href="https://mein.online-impressum.de/alijoscha-alisan-aysanoglu-hollschwandner/">Impressum</a> ·
+    <a href="https://alisansandielstudio.github.io/viewcom-konto-loeschen/">Konto löschen</a>
+  </p>
   <p>ViewCom ist ein unabhängiges Projekt und steht in keiner Verbindung zu Twitch Interactive, Inc. oder zur Google LLC. Twitch ist eine Marke der Twitch Interactive, Inc.</p>
 </footer>
 
