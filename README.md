@@ -1,2 +1,2 @@
 # viewcom-datenschutz
-Datenschutzerklärung und Nutzungsbedingungen für die iOS-App ViewCom
+Datenschutzerklärung und Nutzungsbedingungen für ViewCom (iOS, Android und Web)
