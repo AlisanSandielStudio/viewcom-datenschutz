@@ -1,22 +1,27 @@
 # viewcom-datenschutz
 Datenschutzerklärung, Nutzungsbedingungen und Konto-löschen-Seite für ViewCom (iOS, Android und Web).
 
-## Live (seit G-4, Nov 2026): Firebase Hosting
+## Live: Teil der Web-App (seit dem Web-Start, Nov 2026)
 - https://viewcom.sandiel.studio/datenschutz
 - https://viewcom.sandiel.studio/nutzungsbedingungen
 - https://viewcom.sandiel.studio/konto-loeschen
-- Startseite https://viewcom.sandiel.studio/
+- Startseite https://viewcom.sandiel.studio/ ist jetzt die **Web-App**.
 
-Quelle ist der Ordner **`site/`**. Hochladen (im Repo-Ordner):
+Quelle der Texte bleibt der Ordner **`site/`** in diesem Repo. Ausgeliefert werden sie
+aber von **`viewcom-web`**: Die Domain hat nur eine Firebase-Hosting-Seite, und ein
+Deploy ersetzt immer die komplette Seite. Deshalb:
 
-```
-firebase deploy --only hosting
-```
+1. Text hier in `site/` ändern, committen, pushen.
+2. Im Repo `viewcom-web`:
+   ```
+   npm run sync-legal -- /Volumes/Volume1/viewcom-datenschutz/site
+   npm run build
+   firebase deploy --only hosting
+   ```
 
-**Wichtig:** Die Web-App (`viewcom-web`) soll später unter derselben Domain laufen.
-Ein Deploy ersetzt immer die komplette Seite. Sobald die Web-App live geht, ziehen
-die Dateien aus `site/` nach `viewcom-web/public/` um, und dieses Repo deployt
-nicht mehr auf Firebase.
+**Aus diesem Repo NICHT mehr deployen** – das würde die Web-App überschreiben.
+`firebase.json` zeigt deshalb auf ein Hosting-Ziel, das es absichtlich nicht gibt;
+`firebase deploy` bricht hier mit „target … not configured“ ab.
 
 ## Alt: GitHub Pages
 `index.html` und `nutzungsbedingungen.html` im Repo-Hauptordner sind die alten
