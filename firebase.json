@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "NICHT-DEPLOYEN-ausgeliefert-ueber-viewcom-web",
     "public": "site",
     "ignore": [
       "firebase.json",
